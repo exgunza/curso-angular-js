@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--
+-- Archivo: ejercicios/2_hola_controller/index.html
+-- Descripción: Ejemplo básico de un controlador en AngularJS que muestra un saludo.
+-->
+<html lang="es" ng-app="MyFirstApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Controller</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="controller.js"></script>
+</head>
+<!--
+-- ng-controller="FirstController" vincula el controlador al cuerpo del documento.
+-->
+<body ng-controller="FirstController">
+    {{"Hola " + nombre}}
+</body>
+</html>
