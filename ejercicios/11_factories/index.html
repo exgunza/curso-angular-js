@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="ToDoListApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="angular-local-storage.min.js"></script>
+    <script src="controller.js"></script>
+    <title>Factories</title>
+</head>
+<body ng-controller="ToDoListController">
+    <ul>
+        <li ng-repeat="activity in todo">
+            {{activity.descripcion}} - {{activity.fecha | date: 'short'}} - <a href="#" ng-click="removeActivity(activity)">Eliminar</a>
+        </li>
+    </ul>
+    <form ng-submit="addActivity()">
+        <input type="text" ng-model="newActivity.descripcion"></input>
+        <input type="datetime-local" ng-model="newActivity.fecha"></input>
+        <input type="submit" value="Guardar actividad"></input>
+    </form>
+    <button ng-click="clear()">Limpiar</button>
+</body>
+</html>
