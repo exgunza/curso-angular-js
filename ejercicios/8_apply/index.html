@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="MainModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="controller.js"></script>
+    <title>Apply</title>
+</head>
+<body ng-controller="FirstController">
+    <h1>Escenario cuando no se puede aplicar una directiva de angular como ng-click</h1>
+    <h3>{{nombre_sin_apply}}</h3>
+    <button id="mi_boton_sin_apply">Cambiar nombre SIN apply</button> <p>Botón sin ng-click</p>
+    <p>Cuando se presione este botón, el dato será cambiado en el controlador, pero sin aplicar el apply este valor nuevo nunca será visualizado</p>
+    <p>Cuando se presione el botón <strong>Cambiar nombre CON apply</strong> se logrará actualizar este valor</p>
+    <br/>
+    <h3>{{nombre_con_apply}}</h3>
+    <button id="mi_boton_con_apply">Cambiar nombre CON apply</button> <p>Botón sin ng-click</p>
+    <p>Cuando se presione este botón, el apply llamará a digest y este solicitará que el DOM actualice la vista a todos los elementos</p>
+</body>
+</html>
