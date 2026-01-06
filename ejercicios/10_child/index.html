@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="MyFirstApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="controller.js"></script>
+    <title>Child</title>
+</head>
+<body ng-controller="FirstController">
+    <!-- 
+    Para acceder al valor X del $rootScope desde html debe llamar a $parent 
+    => En controlador: $rootScope.nombre
+    => En html: $parent.nombre ya que $parent es propio de angular 
+    -->
+    <p><strong>Valor de $rootScope (no controlador): </strong>{{$parent.nombre}}</p>
+    <p><strong>Valor de padre (FirstController): </strong>{{nombre}}</p>
+    <!--
+    ChildController se encuentra dentro de la declaración del elemento con
+    ng-controller="FirstController" por lo tanto ChildController heredara todos 
+    los atributos de FirstController
+    -->
+    <div ng-controller="ChildController">
+        <p><strong>Valor del hijo (ChildController): </strong>{{nombre}}</p>
+        <p>Cambiar valor del padre desde el hijo: <input type="text" ng-model="$parent.nombre"/></p>
+    </div>
+</body>
+</html>
