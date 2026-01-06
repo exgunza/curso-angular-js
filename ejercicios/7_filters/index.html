@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="MainModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filters</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body ng-controller="FiltersController">
+    <h3>Filtro Personalizado</h3>
+    <p>Sin filtro: </p>{{mi_texto}}
+    <p>Con filtro: </p>{{mi_texto | removeHtml}}
+    <h3>Filtro para Json</h3>
+    <p>Sin filtro: </p>{{mi_html}}
+    <p>Con filtro: </p>{{mi_html | json}}
+    <h3>Filtro para Currency</h3>
+    <p>Sin filtro: </p>{{costo}}
+    <p>Con filtro: </p>{{costo | currency}}
+    <p>Con filtro: </p>{{costo | currency:'€'}}
+</body>
+</html>
