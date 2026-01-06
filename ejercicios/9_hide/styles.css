@@ -1,0 +1,18 @@
+/*
+Cuando animated no venga con la clase ng-hide
+*/
+.animated{
+    opacity: 1;
+    max-height: auto;
+    overflow: hidden;
+    transition: all 3s;
+}
+/*
+Sobreecribir la clase ng-hide que se coloca de la directiva ng-hide
+Esa clase ng-hide se coloca automáticamente cuando cumple la condición
+*/
+.animated.ng-hide{
+    opacity: 0;
+    max-height: 0px !important;
+    display: block !important;
+}
