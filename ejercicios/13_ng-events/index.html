@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--Es importante colocar ng-app para el soporte de anotaciones de angular-->
+<html lang="es" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <style>
+        .hover{
+            background-color: rgb(207, 137, 137);
+        }
+        .no-hover{
+            background-color: rgb(181, 181, 236);
+        }
+    </style>
+    <title>ng-events</title>
+</head>
+<body>
+    <!--<button ng-click="bandera = !bandera">-->
+    <button ng-mouseover="bandera = true" ng-mouseout="bandera = false"
+            ng-class="{'hover': bandera, 'no-hover': !bandera}">
+        Hover me
+    </button>
+    <span ng-show="bandera"> &lt;== click-me</span>
+    <p><strong>RGB de color: </strong>{{bandera ? "rgb(207, 137, 137)":"rgb(181, 181, 236)"}}</p>
+    <p><strong>Valor de bandera: </strong>{{bandera}}</p>
+</body>
+</html>
